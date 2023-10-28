@@ -14,6 +14,7 @@ $senha_confirmada = $_POST ['senha_aa'];
 
 $mysqli ->query ("INSERT INTO alunos (Nome, CPF, DT_nascimento, Escolaridade, Cidade, Estado, Email, Senha) VALUES ('$nome_a', '$cpf_a', '$dt_nasc_a', '$escolaridade_a', '$cidade_a', '$uf_a', '$email_a', '$senha_escolhida')") or die($mysqli->error);
 
+<<<<<<< HEAD
 if (mysqli_insert_id($mysqli)){
     $_SESSION['msg'] = "<p style='color:green;'>Usuário cadastrado com sucesso</p>";
     header("Location: index.php");
@@ -22,3 +23,7 @@ if (mysqli_insert_id($mysqli)){
     header("Location: index.php");
 }
 ?>
+=======
+echo "<a href='" . $_SERVER['HTTP_REFERER'] . "'>Voltar</a>";
+?>
+>>>>>>> 56f6491a7dbc855a2265a85662917a72e9815532
