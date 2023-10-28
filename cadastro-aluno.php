@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -6,12 +9,19 @@
    <title>Cadastro de usuários</title>
 </head>
 <body>
+        <?php
+            if (isset($_SESSION['msg'])){
+                echo $_SESSION['msg'];
+                unset($_SESSION['msg']);
+            }
+        ?>
    <form action="registro-aluno.php" method="post">
     <fieldset>
         <legend><b>CADASTRO DE ALUNOS</b></legend>
     Nome: <input type="text" name="nome_a"/> </br>
     CPF: <input type="text" name="cpf_a"/> </br>
     Data de nascimento: <input type="date" name="data_a"/> </br>
+    Cidade: <input type="text" name="cidade_a"/> UF: <input type="text" name="estado_a"/> </br>
     Escolaridade: 
     <select name="escolaridade_a">
         <option value="">--Selecione o item desejado--</option>
@@ -21,15 +31,10 @@
         <option value="Ensino superior completo">Ensino superior completo</option>
     </select>
     <br>
-    Selecione seu vinculo:
-    <select name="vinculo">
-        <option value="">--Selecione o item desejado--</option>
-        <option value="Aluno">Aluno</option>
-    </select>
-    <br>
     Digite um email: <input type="email" name="email_a"/> </br>
     Escolha uma senha: <input type="password" name="senha_a"/> </br>
-    <input type="submit"value="Enviar"/> <a href="index.php">Voltar</a>
+    Confirme sua senha: <input type="password" name="senha_aa"/> </br>
+    <input type="submit"value="Cadastrar"/> <a href="index.php">Voltar</a>
 </form>
 <style>
    body{

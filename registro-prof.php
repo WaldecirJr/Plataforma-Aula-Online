@@ -1,22 +1,26 @@
 <?php
+session_start();  
+include_once("conexao.php");
 
 $nome_p = $_POST ['nome_p'];
 $cpf_p = $_POST ['cpf_p'];
 $dt_nasc_p = $_POST ['data_p'];
+$cidade_p = $_POST ['cidade_p'];
+$uf_p = ['estado_p'];
 $escolaridade_p = $_POST ['escolaridade_p'];
 $formacao_p = $_POST ['faculdade'];
+$curso_oferecido = $_POST ['curso'];
 $email_p = $_POST ['email_p'];
-$senha_p = $_POST ['senha_p'];
-$vinculo_p = $_POST ['vinculo'];
+$senha_escolhida = $_POST ['senha_p'];
+$senha_confirmada = $_POST ['senha_pp'];
 
-echo "Seu nome é $nome_p.";
-echo "<br> Seu CPF é $cpf_p. <br>";
-echo "Você nasceu em $dt_nasc_p. <br>";
-echo "Você possui o $escolaridade_p como nível de escolaridade. <br>";
-echo "Você se formou na(o) $formacao_p. <br>";
-echo "Você possui o vinculo de $vinculo_p. <br>";
-echo "O email digitado foi $email_p. <br>";
-echo "A senha escolhida foi $senha_p. <br>";
+$mysqli ->query ("INSERT INTO professores (Nome, CPF, DT_nascimento, Cidade, Estado, Escolaridade, Instituicão, Curso, Email, Senha) VALUES ('$nome_p', '$cpf_p', '$dt_nasc_p', '$cidade_a', '$uf_a' '$escolaridade_a', '$formacao_p', '$curso_oferecido', '$email_p', '$senha_escolhida')") or die($mysqli->error);
 
-echo "<a href='" . $_SERVER['HTTP_REFERER'] . "'>Voltar</a>";
+if (mysqli_insert_id($mysqli)){
+    $_SESSION['msg'] = "<p style='color:green;'>Usuário cadastrado com sucesso</p>";
+    header("Location: index.php");
+}else{
+    $_SESSION['msg'] = "<p style='color:red;'>Usuário não cadastrado com sucesso</p>";
+    header("Location: index.php");
+}
 ?>

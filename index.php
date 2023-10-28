@@ -14,7 +14,7 @@
    <br>
  <center>  <b>Senha</b> : <input type="password"name="senha"/></center>
   <br>
- <p> <center>   <input type="submit"value="Fazer Login"/></center> </p>
+ <p> <center>   <button type="submit">Entrar</butoon></center> </p>
  <center> <a href="alterar-senha.php">Esqueceu a senha?</a></center>                            
 <br>
 <center> Aluno, ainda não tem cadastro?<a href="cadastro-aluno.php"> Cadastre-se aqui!</a></center> 
@@ -28,3 +28,7 @@
 </style>
 </body>
 </html>
+
+<?php
+include ("conexao.php");
+?>
