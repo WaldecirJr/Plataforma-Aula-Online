@@ -14,7 +14,7 @@ $email_p = $_POST ['email_p'];
 $senha_escolhida = $_POST ['senha_p'];
 $senha_confirmada = $_POST ['senha_pp'];
 
-$mysqli ->query ("INSERT INTO professores (Nome, CPF, DT_nascimento, Cidade, Estado, Escolaridade, Instituicão, Curso, Email, Senha) VALUES ('$nome_p', '$cpf_p', '$dt_nasc_p', '$cidade_a', '$uf_a' '$escolaridade_a', '$formacao_p', '$curso_oferecido', '$email_p', '$senha_escolhida')") or die($mysqli->error);
+$mysqli ->query ("INSERT INTO professores (Nome, CPF, DT_nascimento, Cidade, Estado, Escolaridade, Instituicão, Curso, Email, Senha) VALUES ('$nome_p', '$cpf_p', '$dt_nasc_p', '$cidade_p', '$uf_p' '$escolaridade_p', '$formacao_p', '$curso_oferecido', '$email_p', '$senha_escolhida')") or die($mysqli->error);
 
 if (mysqli_insert_id($mysqli)){
     $_SESSION['msg'] = "<p style='color:green;'>Usuário cadastrado com sucesso</p>";
