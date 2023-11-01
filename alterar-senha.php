@@ -14,11 +14,13 @@
     <form action="dados-alterados.php" method="post">
         <fieldset>
             <legend>ALTERE SEUS DADOS DE ACESSO AQUI</legend>
-        Digite seu email: <input type="email" name="email_alt"/> </br>
-        Escolha uma nova senha: <input type="password" name="senha_alt"/> </br>
-        Confirme a nova senha: <input type="password" name="senha_alt1"/> </br>
+            Digite seu email: <input type="email" name="email_alt" required /> <br>
+            Escolha uma nova senha (mínimo 8 caracteres, pelo menos uma letra maiúscula e um número): 
+            <input type="password" name="senha_alt" pattern="^(?=.*[A-Z])(?=.*\d).{8,}$" required />
+            <br>
+            Confirme a nova senha: <input type="password" name="senha_alt1" required /> <br>
         </fieldset>
-        <input type="submit"value="Enviar"/> <a href="index.php">Voltar</a>
+        <input type="submit" value="Enviar"> <a href="index.php">Voltar</a>
     </form>
 </body>
 </html>
