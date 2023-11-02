@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -9,12 +6,6 @@ session_start();
    <title>Cadastro de usuários</title>
 </head>
 <body>
-        <?php
-            if (isset($_SESSION['msg'])){
-                echo $_SESSION['msg'];
-                unset($_SESSION['msg']);
-            }
-        ?>
    <form action="registro-aluno.php" method="post">
     <fieldset>
         <legend><b>CADASTRO DE ALUNOS</b></legend>

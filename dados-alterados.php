@@ -1,10 +1,6 @@
 <?php
 session_start();
-
-$hostname = "localhost";
-$bancodedados = "db_tech_learning";
-$usuario = "root";
-$senha = "";
+include('conexao.php');
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Conectar ao banco de dados (substitua com suas próprias credenciais)

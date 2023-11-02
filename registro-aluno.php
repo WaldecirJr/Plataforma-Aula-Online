@@ -17,7 +17,7 @@ $resultado = $mysqli ->query ("INSERT INTO alunos (Nome, CPF, DT_nascimento, Esc
 if ($resultado) {
     $_SESSION['msg'] = "<p style='color:green;'>Usuário cadastrado com sucesso</p>";
     // Redirecionar para a página de sucesso ou outra página apropriada
-    header("Location: registro.php");
+    header("Location: index.php");
 } else {
     $_SESSION['msg'] = "<p style='color:red;'>Usuário não cadastrado com sucesso</p>";
     // Redirecionar para a página de erro ou outra página apropriada
