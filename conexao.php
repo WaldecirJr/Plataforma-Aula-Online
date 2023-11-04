@@ -1,7 +1,7 @@
 <?php
 
 $hostname = "localhost";
-$bancodedados = "db_tech_learning";
+$bancodedados = "bd_tech_learning";
 $usuario = "root";
 $senha = "";
 
