@@ -3,7 +3,7 @@ session_start();
 
 include('conexao.php');
 
-if(isset($_POST['email']) || isset($_POST['senha'])){
+if(isset($_POST['email']) && isset($_POST['senha'])){
 
    if(strlen($_POST['email']) == 0){
       echo "Preencha seu email";
@@ -56,7 +56,7 @@ if(isset($_POST['email']) || isset($_POST['senha'])){
      <label for="nome"></label>
      <div class="container"><center> <img src="https://media.istockphoto.com/id/1143672593/pt/vetorial/online-testing-and-assessment-quality-monitoring.jpg?s=612x612&w=0&k=20&c=o91bvKRi1deHwBiw29Pl6c9PABhx7crkeMqLoBcRmWs=" width="500" heigth="205"/> </center> </div>
 
-<p> <center> <b>Login</b> : <input type="email"name="login"/> </center> 
+<p> <center> <b>Login</b> : <input type="email"name="email"/> </center> 
    <br>
  <center>  <b>Senha</b> : <input type="password"name="senha"/></center>
   <br>
