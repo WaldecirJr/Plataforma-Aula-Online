@@ -15,6 +15,10 @@ include('protect.php');
     <h1>CODIFICAR O AMBIENTE DO PROFESSOR</h1> </br>
     <h1>CODIFICAR O AMBIENTE DO ALUNO</h1>
 
+<form action="t1.php">
+    <input type="submit" value="Ir para chat" />
+</form>
+    
     <p>
         <a href="logout.php">Sair</a>
     </p>
