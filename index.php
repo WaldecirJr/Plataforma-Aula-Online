@@ -14,7 +14,7 @@ if (isset($_POST['email']) && isset($_POST['senha'])) {
       echo "Preencha sua senha";
    } else {
 
-      $sql_code = "SELECT id, email, senha FROM usuarios WHERE email = '$email'";
+      $sql_code = "SELECT id, email, senha FROM usuarios WHERE email = '$email' AND senha = '$senha'";
       $sql_query = $mysqli->query($sql_code) or die("Falha na execucão do código SQL: " . $mysqli->error);
 
       $quantidade = $sql_query->num_rows;
