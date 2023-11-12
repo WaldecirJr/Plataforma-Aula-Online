@@ -5,11 +5,7 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-image: url('https://mercadoeconsumo.com.br/wp-content/uploads/2020/04/duvidas-interrogacao-1024x576.jpg'); /* Substitua 'background.jpg' pelo caminho correto da sua imagem de fundo. */
-            background-size: cover; /* Redimensiona a imagem para cobrir todo o elemento. */
-            background-repeat: no-repeat; /* Evita repetições da imagem. */
-            background-attachment: fixed; /* Mantém a imagem fixa enquanto a página rola. */
-            background-position: center center; /* Posiciona a imagem no centro da tela. */
+            background-color: rgb(170, 206, 255);
         }
 
         #chat {
@@ -76,7 +72,7 @@
 </head>
 <body>
     <div id='chat'></div>
-    <form method="POST" action="t1.php">
+    <form action="t1.php" method="post">
         <input type="text" name="nome" id="nome" placeholder="Digite seu nome" onfocus="preencherNome()" onkeyup="preencherNome()"><br>
         <br>
         <textarea name="mensagem" id="mensagem" placeholder="Digite sua mensagem"></textarea><br>
@@ -86,9 +82,13 @@
 
     <?php
     include("bd_conect.php");
-    $nome = $_POST["nome"];
-    $mensagem = $_POST["mensagem"];
-    $pdo->query("INSERT INTO chat1 SET nome= '$nome', mensagem= '$mensagem'");
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        // Processar os dados do formulário
+        $nome = $_POST['nome'];
+        $mensagem = $_POST['mensagem'];
+        $pdo->query("INSERT INTO chat1 (nome, mensagem) VALUES ('$nome', '$mensagem')");
+        }
     ?>
 </body>
 </html>

@@ -1,3 +1,7 @@
+<?php
+include 'index1.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,14 +10,22 @@
     <title>Cursos</title>
 </head>
 <body>
-<?php
-include 'index1.php';
-session_start();
-?>
 
- <h1><b> <i> Cursos Disponiveis: </i></b></h1>
+ <h1><b> Curso Disponível</b></h1>
  <br>
- <img src="https://www.4biosacademy.com.br/files/thumbs/block_1952-python-logo-3-350x350.png?v=1633611877">
- 
+ <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg">
+ <section>
+            <form action="t1.php">
+            <input type="submit" value="Ir para chat" />
+            </form>
+    
+            <p><a href="logout.php">Sair</a></p>
+
+                </section>
+ <style>
+      body {
+         background-color: rgb(170, 206, 255);
+      }
+   </style>
 </body>
 </html> 

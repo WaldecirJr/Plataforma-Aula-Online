@@ -20,11 +20,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if ($senha_alt == $senha_alt1) {
         // Verifica se a nova senha atende aos critérios de segurança (mínimo 8 caracteres, pelo menos uma letra maiúscula e um número)
         if (preg_match('/^(?=.*[A-Z])(?=.*\d).{8,}$/', $senha_alt)) {
-            // Hash da senha
-            $senha_hash = password_hash($senha_alt, PASSWORD_BCRYPT);
 
             // Atualiza a senha no banco de dados (substitua 'usuarios' e 'senha' com os nomes corretos da tabela e coluna)
-            $stmt = $mysqli->prepare("UPDATE usuarios SET senha = '$senha_hash' WHERE email = '$email_alt'");
+            $stmt = $mysqli->prepare("UPDATE usuarios SET senha = '$senha_alt' WHERE email = '$email_alt'");
             if ($stmt->execute()) {
                 echo "Senha atualizada com sucesso!";
             } else {
