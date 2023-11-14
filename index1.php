@@ -15,7 +15,7 @@
                 <ul>
                     <li> <a href="area-usuario.php">Home</a></li>
                         <li> <a href="cursos.php">Cursos</a></li>
-                          <li> <a href="perfil.php">Perfil</a></li>
+                          <li> <a href="perfil.php">Avaliações</a></li>
                         <li><a href="index.php">Sair</a></li>  
                 </ul>
             </div>

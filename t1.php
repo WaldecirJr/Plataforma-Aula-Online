@@ -63,7 +63,7 @@
             
             // Verifica se o campo de nome está vazio e preenche com "ALUNO" se estiver
             if (nome.value.trim() === '') {
-                nome.value = 'Professor:';
+                nome.value = '';
             }
         }
 

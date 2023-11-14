@@ -1,5 +1,6 @@
 <?php
-include 'index1.php';
+include ('index1.php');
+include ('upload.php');
 session_start();
 ?>
 <!DOCTYPE html>

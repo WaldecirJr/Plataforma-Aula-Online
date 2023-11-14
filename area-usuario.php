@@ -1,6 +1,7 @@
 <?php
 
 include('protect.php');
+include('index1.php');
 
 ?>
 <!DOCTYPE html>
@@ -11,19 +12,7 @@ include('protect.php');
     <link rel="stylesheet" href="style.php">
     <title>Área do usuário</title>
 </head>
-<> 
-  <nav id="menu-h">
-  <center>
-            <div class="barra-superior">
-                <ul>
-                    <li> <a href="area-usuario.php">Home</a></li>
-                        <li> <a href="cursos.php">Cursos</a></li>
-                          <li> <a href="perfil.php">Perfil</a></li>
-                        <li><a href="index.php">Sair</a></li>  
-                </ul>
-            </div>
-        </center>
-  </nav>
+<>
     <div class="container" style='text-align:justify'>
 
        
