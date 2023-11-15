@@ -64,154 +64,148 @@
     <br>
     <br>
 
-    <label for="q2">2. Qual é a linguagem de estilo padrão na web?</label>
+    <label for="q2">2. Como você faz um comentário de uma linha em PHP?</label>
     <br>
-    <input type="radio" name="q2" value="a">a) JavaScript</input>
-    <br>
-    <br>
-    <input type="radio" name="q2" value="b">b) CSS</input>
+    <input type="radio" name="q2" value="a">a) # Comentário</input>
     <br>
     <br>
-    <input type="radio" name="q2" value="c">c) SQL</input>
+    <input type="radio" name="q2" value="b">b) // Comentário</input>
     <br>
     <br>
-    <br>
-
-    <label for="q3">3. O que significa CSS?</label>
-    <br>
-    <input type="radio" name="q3" value="a">a) Computer Style Sheets</input>
-    <br>
-    <br>
-    <input type="radio" name="q3" value="b">b) Creative Style Sheets</input>
-    <br>
-    <br>
-    <input type="radio" name="q3" value="c">c) Cascading Style Sheets</input>
+    <input type="radio" name="q2" value="c">c) !comentario </input>
     <br>
     <br>
     <br>
 
-    <label for="q4">4. Quanto ao ambiente de desenvolvimento de aplicações para a Internet, julgue o item. 
+    <label for="q3">3. O que significa PHP?</label>
     <br>
-     As folhas de estilos XSLT permitem transformar documentos XML para documentos HTML. </label>
-    <br>
-    <input type="radio" name="q4" value="a">a) Errado</input>
+    <input type="radio" name="q3" value="a">a) Preprocessed Hypertext Page</input>
     <br>
     <br>
-    <input type="radio" name="q4" value="b">b) Certo</input>
+    <input type="radio" name="q3" value="b">b) Personal Home Page</input>
     <br>
     <br>
-    <br>
-
-    <label for="q5">5. Qual propriedade CSS é usada para alterar a cor de fundo de um elemento HTML?</label>
-    <br>
-    <input type="radio" name="q5" value="a">a) Background-color </input>
-    <br>
-    <br>
-    <input type="radio" name="q5" value="b">b) Front-Size </input>
-    <br>
-    <br>
-    <input type="radio" name="q5" value="c">c) Color </input>
-    <br>
-    <br>
-
-    <label for="q6">6. No contexto do HTML DOM, assinale a propriedade (property) que pode ser utilizada na programação para 
-    <br>
-    recuperar (get) ou alterar (change) qualquer elemento.</label>
-    <br>
-    <input type="radio" name="q6" value="a">a) getElementById </input>
-    <br>
-    <br>
-    <input type="radio" name="q6" value="b">b) display </input>
-    <br>
-    <br>
-    <input type="radio" name="q6" value="c">c) innerHTML </input>
+    <input type="radio" name="q3" value="c">c) PHP Hypertext Preprocessor</input>
     <br>
     <br>
     <br>
 
-    <label for="q7">7. Uma especificação W3C, independentemente de plataforma e linguagem, onde se pode alterar e editar a estrutura de um documento, 
+    <label for="q4">4. Qual é a extensão padrão de um arquivo PHP?. </label>
     <br>
-    criando páginas Web altamente dinâmicas, é denominada</label>
-    <br>
-    <input type="radio" name="q7" value="a">a) DOM </input>
+    <input type="radio" name="q4" value="a">a) .ph</input>
     <br>
     <br>
-    <input type="radio" name="q7" value="b">b) CGI </input>
+    <input type="radio" name="q4" value="b">b) .php</input><br>
     <br>
-    <br>
-    <input type="radio" name="q7" value="c">c) DTD </input>
+    <input type="radio" name="q4" value="c">c) .html</input>
     <br>
     <br>
     <br>
-
-    <label for="q8">8. Os elementos e suas combinações possíveis, dentro de um documento XML, são definidos formalmente por</label>
+    
+    <label for="q5">5. Qual é o significado de $_POST em PHP?</label>
     <br>
-    <input type="radio" name="q8" value="a">a) um documento HTML </input>
-    <br>
-    <br>
-    <input type="radio" name="q8" value="b">b) um Schema </input>
+    <input type="radio" name="q5" value="a">a) Uma variável global usada para coletar dados de um formulário enviado via método HTTP POST </input>
     <br>
     <br>
-    <input type="radio" name="q8" value="c">c) uma GML </input>
+    <input type="radio" name="q5" value="b">b) Uma variável de ambiente </input>
+    <br>
+    <br>
+    <input type="radio" name="q5" value="c">c)  Uma variável global usada para coletar dados de um formulário enviado via método HTTP GET </input>
     <br>
     <br>
     <br>
 
-    <label for="q9">9. Um documento WSDL (verão 1.1) é um arquivo com sintaxe XML, sendo que os serviços podem ser compostos por diversos elementos
+    <label for="q6">6. Qual função em PHP é usada para gerar uma saída para o navegador?.</label>
     <br>
-    O elemento que representa a definição abstrata dos dados que estão sendo transmitidos se chama
+    <input type="radio" name="q6" value="a">a) output() </input>
+    <br>
+    <br>
+    <input type="radio" name="q6" value="b">b) print() </input>
+    <br>
+    <br>
+    <input type="radio" name="q6" value="c">c) echo </input>
+    <br>
+    <br>
+    <br>
+
+    <label for="q7">7. Como você declara uma variável em PHP?</label>
+    <br>
+    <input type="radio" name="q7" value="a">a) $variableName = 5; </input>
+    <br>
+    <br>
+    <input type="radio" name="q7" value="b">b) var variableName; </input>
+    <br>
+    <br>
+    <input type="radio" name="q7" value="c">c) variableName = 5; </input>
+    <br>
+    <br>
+    <br>
+
+    <label for="q8">8. Como você faz um comentário de múltiplas linhas em PHP?</label>
+    <br>
+    <input type="radio" name="q8" value="a">a) // Isto é um comentário </input>
+    <br>
+    <br>
+    <input type="radio" name="q8" value="b">b) /* Isto é um comentário */ </input>
+    <br>
+    <br>
+    <input type="radio" name="q8" value="c">c) # Isto é um comentário </input>
+    <br>
+    <br>
+    <br>
+
+    <label for="q9">9. Qual a sintaxe correta para um comando if em PHP?
+    <br>
     </label>
     <br>
-    <input type="radio" name="q9" value="a">a) data </input>
+    <input type="radio" name="q9" value="a">a) if condicao then { ... } </input>
     <br>
     <br>
-    <input type="radio" name="q9" value="b">b) message </input>
+    <input type="radio" name="q9" value="b">b) if (condição) { ... } </input>
     <br>
     <br>
-    <input type="radio" name="q9" value="c">c) steam </input>
-    <br>
-    <br>
-    <br>
-
-    <label for="q10">10. O objeto XMLHttpRequest é essencial para o AJAX, sendo suportado por todos os navegadores modernos. 
-    <br>
-    Os métodos válidos desse objeto são</label>
-    <br>
-    <input type="radio" name="q10" value="a">a) abort() e receive()</input>
-    <br>
-    <br>
-    <input type="radio" name="q10" value="b">b) open() e responseXML()</input>
-    <br>
-    <br>
-    <input type="radio" name="q10" value="c">c) getAllResponseHeaders() e setRequestHeader() </input>
+    <input type="radio" name="q9" value="c">c) if: condicao { ... } </input>
     <br>
     <br>
     <br>
 
-    <label for="q11">11. A tag que deve ser utilizada no da estrutura HTML e que serve para 
+    <label for="q10"> 10. Como você encerra um bloco de código PHP?
     <br>
-    definir algumas informações do site, como "author", "description" e "keywords", se chama:</label>
+    </label>
     <br>
-    <input type="radio" name="q11" value="a">a) < content > </input>
-    <br>
-    <br>
-    <input type="radio" name="q11" value="b">b) < meta > </input>
+    <input type="radio" name="q10" value="a">a) >? </input>
     <br>
     <br>
-    <input type="radio" name="q11" value="c">c) < script > </input>
+    <input type="radio" name="q10" value="b">b) ?! </input>
+    <br>
+    <br>
+    <input type="radio" name="q10" value="c">c) ?></input>
     <br>
     <br>
     <br>
 
-    <label for="q12">12. Assinale a alternativa que melhor descreve alguma diferença entre as tags < div > e < span > no HTML.</label>
+    <label for="q11">11. Como você escreve "Olá, mundo!" em PHP? </label>
     <br>
-    <input type="radio" name="q12" value="a">a) < div > é um elemento de bloco enquanto < span > é um elemento inline.</input>
-    <br>
-    <br>
-    <input type="radio" name="q12" value="b">b)  < div > não aceita aninhamento enquanto < span > aceita. </input>
+    <input type="radio" name="q11" value="a">a) Ambas as opções.</input>
     <br>
     <br>
-    <input type="radio" name="q12" value="c">c) Não existe diferença, exceto pelo nome. </input>
+    <input type="radio" name="q11" value="b">b) echo "Olá, mundo!"; </input>
+    <br>
+    <br>
+    <input type="radio" name="q11" value="c">c) print("Olá, mundo!"); </input>
+    <br>
+    <br>
+    <br>
+
+    <label for="q12">12. Qual é o operador de igualdade estrita em PHP, que compara tanto o valor quanto o tipo?</label>
+    <br>
+    <input type="radio" name="q12" value="a">a) ===</input>
+    <br>
+    <br>
+    <input type="radio" name="q12" value="b">b) == </input>
+    <br>
+    <br>
+    <input type="radio" name="q12" value="c">c) = </input>
     <br>
     <br>
     <br>

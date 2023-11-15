@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Respostas</title>
-    <h2> Sua prova Corrigida</h2>
+    <h2> Gabarito</h2>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -41,7 +41,7 @@
     'q9' => $_POST['q9'],
     'q10' => $_POST['q10'],
     'q11'=> $_POST['q11'],
-    'q12'=> $_POST['q12']
+    'q12'=> $_POST['q12'],
  );
 
  // Definir respostas corretas
@@ -56,7 +56,7 @@
     'q8' => 'b',
     'q9' => 'b',
     'q10' => 'c',
-    'q11'=> 'b',
+    'q11'=> 'a',
     'q12'=> 'a',
  );
 
@@ -85,7 +85,7 @@
  }
 
  // Exibir pontuação geral
- echo "<p><strong>Pontuação Geral:</strong> $pontuacao pontos</p>";
+ echo "<p><strong>Pontuação Geral:</strong> $pontuacao/12</p>";
  ?>
         <center><button type="submit">Sair</button></center>
 </form>
