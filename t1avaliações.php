@@ -53,13 +53,13 @@
 <form action="t2respostas.php" method="post">
     <label for="q1">1. O que é HTML?</label>
     <br>
-    <input type="radio" name="a" value="a">a) HyperText Markup Language</input> 
+    <input type="radio" name="q1" value="a">a) HyperText Markup Language</input> 
     <br>
     <br>
-    <input type="radio" name="b" value="b">b) Linguagem de Marcação de Hipertexto</input>
+    <input type="radio" name="q1" value="b">b) Linguagem de Marcação de Hipertexto</input>
     <br>
     <br>
-    <input type="radio" name="c" value="c">c) Ambas as opções estão corretas</input>
+    <input type="radio" name="q1" value="c">c) Ambas as opções estão corretas</input>
     <br>
     <br>
     <br>
