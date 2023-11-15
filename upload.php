@@ -4,7 +4,7 @@
     <title>Upload de Arquivos</title>
 </head>
 <body>
-    <form action="upload.php" method="post" enctype="multipart/form-data">
+    <form action="conexao.php" method="post" enctype="multipart/form-data">
         <input type="file" name="fileToUpload" id="fileToUpload">
         <input type="submit" value="Enviar Arquivo" name="submit">
     </form>
@@ -12,6 +12,7 @@
 </html>
 
 <?php
+include("conexao.php");
 $targetDirectory = "arquivo/";
 
 if(isset($_POST["submit"])) {
@@ -44,10 +45,12 @@ if(isset($_POST["submit"])) {
     } else {
         
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+            $mysqli ->query("INSERT INTO arquivo (nome, path) VALUES ('$targetFile','$fileType')" or die ($mysqli->error));
             echo "O arquivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " foi enviado com sucesso.";
         } else {
             echo "Desculpe, houve um erro no envio do seu arquivo.";
         }
     }
 }
+$sql_query = $mysqli ->query("SELECT * FROM arquivo") or die($mysqli->error);
 ?>
