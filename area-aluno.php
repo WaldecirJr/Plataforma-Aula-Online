@@ -1,7 +1,6 @@
 <?php
 
 include('protect.php');
-include('index1.php');
 
 ?>
 <!DOCTYPE html>
@@ -9,10 +8,24 @@ include('index1.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.php">
-    <title>Área do usuário</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Área do Aluno</title>
 </head>
 <>
+    <nav id="menu-h">
+    <center>
+                <div class="barra-superior">
+                    <ul>
+                        <li> <a href="area-aluno.php">Home</a></li>
+                            <li> <a href="cursos.php">Cursos matriculados</a></li>
+                            <li> <a href="t1avaliações.php">Área de avaliações</a></li>
+                            <li> <a href="t1.php">Chat com o professor</a></li>
+                            <li><a href="index.php">Sair</a></li>  
+                    </ul>
+                </div>
+            </center>
+    </nav>
+
     <div class="container" style='text-align:justify'>
 
        

@@ -48,7 +48,7 @@
          Escolha uma senha: <input type="password" name="senha"/><br>
          Confirme sua senha: <input type="password" name="senha_confirmacao"/><br>
 
-         <input type="submit" value="Cadastrar"/>
+         <input type="submit" value="Cadastrar"/> <a href="index.php">Voltar</a>
       </fieldset>
    </form>
 

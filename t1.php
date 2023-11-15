@@ -77,7 +77,7 @@
         <br>
         <textarea name="mensagem" id="mensagem" placeholder="Digite sua mensagem"></textarea><br>
         <br>
-        <button id="submit">Enviar</button>
+        <button id="submit">Enviar</button> 
     </form>
 
     <?php
