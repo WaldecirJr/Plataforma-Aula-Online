@@ -16,21 +16,7 @@ include ('upload.php');
  <br>
  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg">
             <section>
-               <form action="area-aluno.php">
-                  <input type="submit" value="Visulizar conteúdo do curso"/>
-               </form>
-            <section>
-               <form action="t1.php">
-                  <input type="submit" value="Ir para chat" />
-               </form>
-    
-                <p><a href="logout.php">Sair</a></p>
 
             </section>
- <style>
-      body {
-         background-color: rgb(170, 206, 255);
-      }
-   </style>
 </body>
 </html> 

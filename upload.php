@@ -1,3 +1,6 @@
+<?php
+include("conexao.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +20,7 @@
 </html>
 
 <?php
-include("conexao.php");
+
 $targetDirectory = "arquivo/";
 
 if(isset($_POST["submit"])) {
@@ -50,7 +53,8 @@ if(isset($_POST["submit"])) {
     } else {
         
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
-            $mysqli ->query("INSERT INTO arquivo (nome, path) VALUES ('$targetFile','$fileType')" or die ($mysqli->error));
+            $mysqli->query("INSERT INTO arquivo (Nome, Extensao) VALUES ('$targetFile', '$fileType')") or die($mysqli->error);
+
             echo "O arquivo ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " foi enviado com sucesso.";
         } else {
             echo "Desculpe, houve um erro no envio do seu arquivo.";

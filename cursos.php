@@ -12,6 +12,7 @@ session_start();
 <body>
 
  <h1><b> Curso Disponível</b></h1>
+ 
  <br>
  <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg">
             <section>
