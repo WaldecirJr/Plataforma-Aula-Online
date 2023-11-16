@@ -11,4 +11,8 @@ if ($mysqli->connect_errno) {
     echo "Falha ao conectar: (" . $mysqli->connect_errno . ") " . $mysqli->connect_error;
 }
 
+function formatar_data($data){
+    return implode('/', array_reverse(explode('-', $data)));
+}
+
 ?>
