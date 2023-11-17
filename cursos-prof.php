@@ -74,10 +74,35 @@ if (isset($_POST["submit"])) {
 </head>
 <body>
    <section>
-   <h1><b> Curso Disponível</b></h1>
+   <h1><b> CURSO OFERTADO</b></h1>
  <br>
- <img height="200" src="https://upload.wikimedia.org/wikipedia/commons/2/27/PHP-logo.svg">
+ <?php
+session_start();
+
+if (!isset($_SESSION['id'])) {
+    echo "Usuário não logado!";
+} else {
+    $userId = $_SESSION['id'];
+
+    include("conexao.php");
+
+    $sql = "SELECT Nome, Curso FROM usuarios WHERE id = $userId";
+
+    $resultado = $mysqli->query($sql);
+
+    if ($resultado->num_rows > 0) {
+        $row = $resultado->fetch_assoc();
+        echo "<b>OLÁ PROFESSOR(A), <b>" .$row["Nome"];
+        echo "<br><b>VOCÊ ESTÁ LECIONANDO: <b>".$row["Curso"];
+    } else {
+        echo "Usuário não está oferecendo nenhum curso.";
+    }
+
+    $mysqli->close();
+}
+?>
    </section>
+   <br>
    <section>
    <fieldset>
         <legend><b>UPLOAD DE ARQUIVOS</b></legend>
@@ -112,6 +137,11 @@ if (isset($_POST["submit"])) {
             ?>
         </tbody>
     </table>
+   </section>
+   <section>
+    <br>
+    <br>
+   <a href="area-professor.php">Voltar</a>
    </section>
 </body>
 </html>
