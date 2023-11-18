@@ -18,7 +18,7 @@ if(isset($_GET['deletar'])){
 
 }
 
-$targetDirectory = "avaliaçoes/";
+$targetDirectory = "avaliacoes/";
 
 if(isset($_POST["submit"])) {
     $targetFile = $targetDirectory . basename($_FILES["fileToUpload"]["name"]);
@@ -49,7 +49,7 @@ if(isset($_POST["submit"])) {
     } else {
         
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
-            $mysqli->query("INSERT INTO avaliacao (Nome_avaliacao, Extensao) VALUES ('$targetFile', '$fileType')") or die($mysqli->error);
+            $mysqli->query("INSERT INTO avaliacao (Nome_avaliacao, Extensao, Data_upload) VALUES ('$targetFile', '$fileType', NOW())") or die($mysqli->error);
 
             echo "A avaliação ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " foi enviada com sucesso.";
         } else {
@@ -108,10 +108,11 @@ if (isset($_POST["submit"])) {
                                         <?php
                                         if ($sql_query && $sql_query->num_rows > 0) {
                                             while ($avaliacao = $sql_query->fetch_assoc()) {
+                                            $timestamp = strtotime($avaliacao['Data_upload']);
                                         ?>
                                         <tr>
                                         <td><a href="<?php echo $avaliacao['Nome_avaliacao']; ?>"><?php echo $avaliacao['Nome_avaliacao']; ?></td>
-                                        <td><?php echo date("d/m/Y H:i", strtotime($avaliacao['Data_upload'])); ?></td>
+                                        <td><?php echo date("d/m/Y H:i:s", strtotime($avaliacao['Data_upload'])); ?></td>
                                         <th><a href="t1avaliações.php?deletar=<?php echo $avaliacao['ID']; ?>">Deletar</a></th>
                                         </tr>
                                         <?php

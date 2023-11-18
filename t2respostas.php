@@ -34,7 +34,8 @@ if(isset($_POST["submit"])) {
         
         if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
             $userId = $_SESSION['id'];
-            $mysqli->query("INSERT INTO avaliacao (Resposta_aluno, Extensao_res, Usuario_id) VALUES ('$targetFile', '$fileType', '$userId')") or die($mysqli->error);
+            $mysqli->query("INSERT INTO avaliacao (Resposta_aluno, Extensao_res, Usuario_id, Data_upload) VALUES ('$targetFile', '$fileType', '$userId', NOW())") or die($mysqli->error);
+
 
             echo "O envio da avaliação ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " foi relizadoa com sucesso.";
         } else {
@@ -146,6 +147,7 @@ if (isset($_POST["submit"])) {
             <?php
             if ($sql_query && $sql_query->num_rows > 0) {
                 while ($avaliacao = $sql_query->fetch_assoc()) {
+                    $timestamp = strtotime($avaliacao['Data_upload']);
                     ?>
                     <tr>
                         <td>
@@ -153,7 +155,7 @@ if (isset($_POST["submit"])) {
                                 <?php echo $avaliacao['Resposta_aluno']; ?>
                             </a>
                         </td>
-                        <td><?php echo date("d/m/Y H:i", strtotime($avaliacao['Data_upload'])); ?></td>
+                        <td><?php echo date("d/m/Y H:i:s", strtotime($avaliacao['Data_upload'])); ?></td>
                     </tr>
                     <?php
                 }
