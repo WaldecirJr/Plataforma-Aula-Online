@@ -1,93 +1,169 @@
+<?php
+session_start();
+include("conexao.php");
+
+$targetDirectory = "avaliacoes/";
+
+if(isset($_POST["submit"])) {
+    $targetFile = $targetDirectory . basename($_FILES["fileToUpload"]["name"]);
+    $uploadOk = 1;
+    $fileType = strtolower(pathinfo($targetFile,PATHINFO_EXTENSION));
+
+    
+    if (file_exists($targetFile)) {
+        echo "Desculpe, o arquivo já existe.";
+        $uploadOk = 0;
+    }
+
+  
+    if ($_FILES["fileToUpload"]["size"] > 5000000) {
+        echo "Desculpe, o arquivo é muito grande.";
+        $uploadOk = 0;
+    }
+
+    
+    if($fileType != "pdf" && $fileType != "txt") {
+        echo "Desculpe, apenas arquivos PDF e TXT são permitidos.";
+        $uploadOk = 0;
+    }
+
+   
+    if ($uploadOk == 0) {
+        echo "Desculpe, seu arquivo não pôde ser enviado.";
+    } else {
+        
+        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $targetFile)) {
+            $userId = $_SESSION['id'];
+            $mysqli->query("INSERT INTO avaliacao (Resposta_aluno, Extensao_res, Usuario_id) VALUES ('$targetFile', '$fileType', '$userId')") or die($mysqli->error);
+
+            echo "O envio da avaliação ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " foi relizadoa com sucesso.";
+        } else {
+            echo "Desculpe, houve um erro no envio da sua avaliação.";
+        }
+    }
+}
+if (isset($_POST["submit"])) {
+    $sql_query = $mysqli->query("SELECT * FROM avaliacao WHERE Usuario_id = '{$_SESSION['id']}'") or die($mysqli->error);
+}else{
+    $sql_query = null;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Respostas</title>
-    <h2> Gabarito</h2>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-        }
-        .correct {
-            color: green;
-        }
-        .incorrect {
-            color: red;
-        }
-        button {
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Avaliações</title>
 </head>
-<body>
-  <form action="area-usuario.php" method="POST">
- <?php
-  // Receber as respostas do formulário
- $respostas = array(
-    'q1' => $_POST['q1'],
-    'q2' => $_POST['q2'],
-    'q3' => $_POST['q3'],
-    'q4' => $_POST['q4'],
-    'q5' => $_POST['q5'],
-    'q6' => $_POST['q6'],
-    'q7' => $_POST['q7'],
-    'q8' => $_POST['q8'],
-    'q9' => $_POST['q9'],
-    'q10' => $_POST['q10'],
-    'q11'=> $_POST['q11'],
-    'q12'=> $_POST['q12'],
- );
+   <body>
+   <nav id="menu-h">
+    <center>
+                <div class="barra-superior">
+                    <ul>
+                        <li> <a href="area-aluno.php">Home</a></li>
+                            <li> <a href="cursos.php">Cursos matriculados</a></li>
+                            <li> <a href="t2respostas.php">Área de avaliações</a></li>
+                            <li> <a href="t1.php">Chat com o professor</a></li>
+                            <li><a href="index.php">Sair</a></li>  
+                    </ul>
+                </div>
+            </center>
+    </nav>
 
- // Definir respostas corretas
- $respostas_corretas = array(
-    'q1' => 'c',
-    'q2' => 'b',
-    'q3' => 'c',
-    'q4' => 'b',
-    'q5' => 'a',
-    'q6' => 'c',
-    'q7' => 'a',
-    'q8' => 'b',
-    'q9' => 'b',
-    'q10' => 'c',
-    'q11'=> 'a',
-    'q12'=> 'a',
- );
+      <h1><b> CURSO MATRICULADO</b></h1>
+         <section>
+            <?php
 
- $pontuacao = 0;
+               if (!isset($_SESSION['id'])) {
+                   echo "Usuário não logado!";
+               } else {
+                  $userId = $_SESSION['id'];
 
- // Verificar as respostas e exibir os resultados
- foreach ($respostas_corretas as $pergunta => $resposta_correta) {
-    echo "<p><strong>Pergunta $pergunta:</strong></p>";
+                  include("conexao.php");
 
-    if (isset($respostas[$pergunta])) {
-        if ($respostas[$pergunta] === $resposta_correta) {
-            echo "<p>Sua resposta: <span class='correct'>$respostas[$pergunta]</span></p>";
-            echo "<p>Correto! Resposta: <span class='correct'>$resposta_correta</span></p>";
-            // Incrementar a pontuação
-            $pontuacao +=1.0;
-        } else {
-            echo "<p>Sua resposta: <span class='incorrect'>$respostas[$pergunta]</span></p>";
-            echo "<p>Incorreto! Resposta correta: <span class='correct'>$resposta_correta</span></p>";
-        }
-    } else {
-        echo "<p>Sua resposta: <span class='incorrect'>Não selecionada</span></p>";
-        echo "<p>Incorreto! Resposta correta: <span class='correct'>$resposta_correta</span></p>";
-    }
+                  $sql = "SELECT Nome, Curso_a FROM usuarios WHERE id = $userId";
 
-    echo "<hr>";
- }
+                  $resultado = $mysqli->query($sql);
 
- // Exibir pontuação geral
- echo "<p><strong>Pontuação Geral:</strong> $pontuacao/12</p>";
- ?>
-        <center><button type="submit">Sair</button></center>
-</form>
-</body>
-</html>
+               if ($resultado->num_rows > 0) {
+                  $row = $resultado->fetch_assoc();
+                     echo "<b>OLÁ, <b>" .$row["Nome"] ."!" ."<br>" ."<br>";
+                     echo "Seja muito bem-vindo(a) a área de avaliação do nosso curso de " .$row["Curso_a"] ." oferecido na TECH LEARNING! É uma alegria tê-lo(a) conosco nesta jornada de aprendizado. <br>" ."<br>";
+                     echo "<br><b>AVALIAÇÃO DO CURSO:<b>";
+               } else {
+                     echo "Usuário não está matriculado em nenhum curso.";
+               }
+
+                $mysqli->close();
+               }
+            ?>
+         </section>
+            <br>
+            <section>
+               <?php
+
+               include("conexao.php");
+
+               $sql = "SELECT * FROM avaliacao";
+
+               $result = $mysqli->query($sql);
+
+               if ($result->num_rows > 0) {
+                  while ($row = $result->fetch_assoc()) {
+                     $nomeAvaliacao = $row["Nome_avaliacao"];
+                     echo "<p>Avaliação: <a href='$nomeAvaliacao' download>$nomeAvaliacao</a></p>";
+                  }
+               } else {
+                  echo "Nenhuma avaliação disponível no momento.";
+               }
+
+               $mysqli->close();
+               ?>
+            </section>
+               <br>
+               <section>
+                    Envie abaixo sua resposta. Lembre-se, responda as questões com calma e coloque em prática o que você aprendeu ao longo do curso!
+                        <fieldset>
+                            <legend><b>UPLOAD DE RESPOSTA</b></legend>
+                            <form action="t2respostas.php" method="post" enctype="multipart/form-data">
+                            <input type="file" name="fileToUpload" id="fileToUpload">
+                            <input type="submit" value="Enviar avaliação" name="submit">
+                        </fieldset>
+                    </form>
+                </section>
+                    <br>
+                    <section>
+    <h1>Respostas enviadas</h1>
+    <table border="1" cellpadding="10">
+        <thead>
+            <th>Resposta</th>
+            <th>Data de Envio</th>
+            <th></th>
+        </thead>
+        <tbody>
+            <?php
+            if ($sql_query && $sql_query->num_rows > 0) {
+                while ($avaliacao = $sql_query->fetch_assoc()) {
+                    ?>
+                    <tr>
+                        <td>
+                            <a href="<?php echo $avaliacao['Resposta_aluno']; ?>" download>
+                                <?php echo $avaliacao['Resposta_aluno']; ?>
+                            </a>
+                        </td>
+                        <td><?php echo date("d/m/Y H:i", strtotime($avaliacao['Data_upload'])); ?></td>
+                    </tr>
+                    <?php
+                }
+            } else {
+                echo "<tr><td colspan='3'>Nenhuma resposta enviada.</td></tr>";
+            }
+            ?>
+        </tbody>
+    </table>
+</section>
+
+   </body>
+</html> 

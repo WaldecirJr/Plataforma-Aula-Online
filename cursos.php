@@ -10,6 +10,19 @@ session_start();
     <title>Cursos</title>
 </head>
    <body>
+   <nav id="menu-h">
+    <center>
+                <div class="barra-superior">
+                    <ul>
+                        <li> <a href="area-aluno.php">Home</a></li>
+                            <li> <a href="cursos.php">Cursos matriculados</a></li>
+                            <li> <a href="t2respostas.php">Área de avaliações</a></li>
+                            <li> <a href="t1.php">Chat com o professor</a></li>
+                            <li><a href="index.php">Sair</a></li>  
+                    </ul>
+                </div>
+            </center>
+    </nav>
 
       <h1><b> CURSO MATRICULADO</b></h1>
          <section>
@@ -22,17 +35,17 @@ session_start();
 
                   include("conexao.php");
 
-                  $sql = "SELECT Nome FROM usuarios WHERE id = $userId";
+                  $sql = "SELECT Nome, Curso_a FROM usuarios WHERE id = $userId";
 
                   $resultado = $mysqli->query($sql);
 
                if ($resultado->num_rows > 0) {
                   $row = $resultado->fetch_assoc();
                      echo "<b>OLÁ, <b>" .$row["Nome"] ."!" ."<br>" ."<br>";
-                     echo "Seja muito bem-vindo(a) a TECH LEARNING! É uma alegria tê-lo(a) conosco nesta jornada de aprendizado. Estamos aqui para fornecer o suporte necessário e incentivar seu progresso em seus estudos. Aproveite cada momento para explorar, absorver conhecimento e expandir suas habilidades! <br>" ."<br>";
+                     echo "Seja muito bem-vindo(a) ao curso " .$row["Curso_a"] ." oferecido na TECH LEARNING! É uma alegria tê-lo(a) conosco nesta jornada de aprendizado. Estamos aqui para fornecer o suporte necessário e incentivar seu progresso em seus estudos. Aproveite cada momento para explorar, absorver conhecimento e expandir suas habilidades! <br>" ."<br>";
                      echo "<br><b>LISTA DE ARQUIVOS DIDÁTICOS DO CURSO:<b>";
                } else {
-                     echo "Usuário não está oferecendo nenhum curso.";
+                     echo "Usuário não está matriculado em nenhum curso.";
                }
 
                 $mysqli->close();
@@ -61,10 +74,5 @@ session_start();
                $mysqli->close();
                ?>
             </section>
-               <section>
-                  <br>
-                  <br>
-                  <a href="area-aluno.php">Voltar</a>
-               </section>
    </body>
 </html> 

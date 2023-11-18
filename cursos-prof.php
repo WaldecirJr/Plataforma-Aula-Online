@@ -73,6 +73,19 @@ if (isset($_POST["submit"])) {
     <title>Upload de Arquivos</title>
 </head>
 <body>
+    <nav id="menu-h">
+        <center>
+                    <div class="barra-superior">
+                        <ul>
+                            <li> <a href="area-professor.php">Home</a></li>
+                                <li> <a href="cursos-prof.php">Cursos ofertados</a></li>
+                                <li> <a href="t1avaliações.php">Área de avaliações</a></li>
+                                <li> <a href="t1.php">Chat com o aluno</a></li>
+                                <li><a href="index.php">Sair</a></li>  
+                        </ul>
+                    </div>
+                </center>
+        </nav>
    <section>
    <h1><b> CURSO OFERTADO</b></h1>
  <br>
@@ -86,14 +99,15 @@ if (!isset($_SESSION['id'])) {
 
     include("conexao.php");
 
-    $sql = "SELECT Nome, Curso FROM usuarios WHERE id = $userId";
+    $sql = "SELECT Nome, Curso_p FROM usuarios WHERE id = $userId";
 
     $resultado = $mysqli->query($sql);
 
     if ($resultado->num_rows > 0) {
         $row = $resultado->fetch_assoc();
-        echo "<b>OLÁ PROFESSOR(A), <b>" .$row["Nome"];
-        echo "<br><b>VOCÊ ESTÁ LECIONANDO: <b>".$row["Curso"];
+        echo "<b>OLÁ PROFESSOR(A), <b>" .$row["Nome"] ."." ."<br>" ."<br>";
+        echo "Seja muito bem-vindo(a) a TECH LEARNING! É uma alegria tê-lo(a) conosco nesta jornada. Estamos aqui para fornecer o suporte necessário e incentivar nossos alunos ao progresso em seus estudos. Aproveite cada momento para explorar e repassar conhecimento de suas habilidades!! <br>" ."<br>";
+        echo "<br><b>VOCÊ ESTÁ LECIONANDO: <b>".$row["Curso_p"];
     } else {
         echo "Usuário não está oferecendo nenhum curso.";
     }
@@ -137,11 +151,6 @@ if (!isset($_SESSION['id'])) {
             ?>
         </tbody>
     </table>
-   </section>
-   <section>
-    <br>
-    <br>
-   <a href="area-professor.php">Voltar</a>
    </section>
 </body>
 </html>

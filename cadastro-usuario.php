@@ -30,6 +30,11 @@
                <option value="Ensino superior incompleto">Ensino superior incompleto</option>
                <option value="Ensino superior completo">Ensino superior completo</option>
             </select><br>
+            Curso na plataforma:
+            <select name="curso_a">
+               <option value="">--Selecione o item desejado--</option>
+               <option value="PHP AVANÇADO">PHP AVANÇADO</option> 
+            </select></br>
          </div>
 
          <div id="info_professor" style="display: none;">
@@ -41,7 +46,11 @@
                <option value="Doutorado">Doutor(a)</option>
             </select><br>
             Instituição de formação: <input type="text" name="instituicao"/><br>
-            Curso oferecido na plataforma: <input type="text" name="curso"/><br>
+            Curso oferecido na plataforma:
+            <select name="curso_p">
+               <option value="">--Selecione o item desejado--</option>
+               <option value="PHP AVANÇADO">PHP AVANÇADO</option> 
+            </select>
          </div>
 
          Digite um email: <input type="email" name="email"/><br>

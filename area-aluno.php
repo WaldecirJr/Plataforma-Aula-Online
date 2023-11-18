@@ -37,8 +37,8 @@ include('protect.php');
             </section>
             <main>
                 <section>
-                    <h2>Sobre nós</h2>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/ctx2h60FUIY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <h2>Curiosidades sobre a linguagem PHP</h2>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/5_CPIFc0vUU?si=TmpXtlPISTG41spA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </section>
             </main>
 
