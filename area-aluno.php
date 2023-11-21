@@ -11,7 +11,7 @@ include('protect.php');
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Área do Aluno</title>
 </head>
-<>
+
     <nav id="menu-h">
     <center>
                 <div class="barra-superior">
