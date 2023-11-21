@@ -1,0 +1,4 @@
+# Plataforma-Aula-Online
+Desafio de programação web
+
+No software plataforma de aulas online obtemos a funcionalidade de cadastro, onde nela será possível tanto o professor, quanto o aluno ter acesso ao sistema, através da tela de login. Dentro do software é possível realizar o upload das aulas, onde o professor irá conseguir fazer o envio de arquivo, para que o aluno possa ter acesso. Além desta funcionalidade, possui um fórum de interação, no qual tanto o aluno, quanto o professor conseguirão se comunicar através de mensagem de texto. No sistema também, é possível realizar avaliações, onde o professor irá conseguir fazer o upload da prova e o aluno obterá acesso, conseguindo fazer a avaliação. Nesse sentido, esse software pretende trazer usabilidade para facilitar a comunicação e as atividades entre aluno e professor.
